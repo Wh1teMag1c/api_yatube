@@ -1,10 +1,12 @@
-# api/permissions.py
+"""Модуль описания прав доступа для API."""
 from rest_framework import permissions
 
+
 class IsAuthorOrReadOnly(permissions.BasePermission):
+    """Разрешение на изменение только для автора объекта."""
+
     def has_object_permission(self, request, view, obj):
-        # Если это безопасный метод (GET, HEAD, OPTIONS) - разрешаем
+        """Проверка прав на уровне отдельного объекта."""
         if request.method in permissions.SAFE_METHODS:
             return True
-        # В противном случае проверяем, что пользователь - автор
         return obj.author == request.user

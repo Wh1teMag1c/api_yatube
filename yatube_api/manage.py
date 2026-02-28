@@ -1,10 +1,11 @@
 #!/usr/bin/env python
-"""Django's command-line utility for administrative tasks."""
+"""Служебная утилита для управления Django-проектом."""
 import os
 import sys
 
 
 def main():
+    """Настройка окружения и запуск командной строки."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'yatube_api.settings')
     try:
         from django.core.management import execute_from_command_line

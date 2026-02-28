@@ -1,9 +1,12 @@
+"""Настройка административной панели для приложения posts."""
 from django.contrib import admin
 
 from .models import Comment, Group, Post
 
 
 class PostAdmin(admin.ModelAdmin):
+    """Конфигурация управления постами в админ-панели."""
+
     list_display = ('pk', 'text', 'pub_date', 'author')
     search_fields = ('text',)
     list_filter = ('pub_date',)

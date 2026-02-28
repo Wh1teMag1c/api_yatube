@@ -1,4 +1,2 @@
-from django.urls import path
-
-urlpatterns = [
-]
+"""URL-маршруты приложения posts."""
+urlpatterns = []
